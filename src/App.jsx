@@ -5,15 +5,19 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import Add from './Components/Add'
 import ViewTeam from './Components/ViewTeam'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-     
-     <Add/>
-     <ViewTeam/>
+        <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Add/>}/>
+          <Route path='/ViewTeam' element={<ViewTeam/>}/>
+        </Routes>
+        </BrowserRouter>
     </>
   )
 }
